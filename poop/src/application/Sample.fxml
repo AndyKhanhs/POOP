@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <ComboBox fx:id="comboboxCategory" layoutX="28.0" layoutY="160.0" prefHeight="44.0" prefWidth="296.0" />
+      <Button layoutX="143.0" layoutY="44.0" mnemonicParsing="false" onAction="#openCategoryAddWd" prefHeight="44.0" prefWidth="103.0" text="Category" />
+      <Button layoutX="28.0" layoutY="44.0" mnemonicParsing="false" onAction="#openImportFileWd" prefHeight="44.0" prefWidth="103.0" text="Import" />
+      <Button layoutX="28.0" layoutY="308.0" mnemonicParsing="false" onAction="#createQuestion" prefHeight="53.0" prefWidth="296.0" text="CREATE A NEW QUESTION ..." />
+      <CheckBox fx:id="checkSubCategories" layoutX="28.0" layoutY="221.0" mnemonicParsing="false" onAction="#showSubCategories" prefHeight="44.0" prefWidth="296.0" text="Also show questions from subcategories">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </CheckBox>
+      <TableView fx:id="table" layoutX="28.0" layoutY="383.0" prefHeight="352.0" prefWidth="451.0">
+         <columns>
+            <TableColumn fx:id="nameColumn" prefWidth="386.0" text="Question" />
+            <TableColumn fx:id="actionColumn" prefWidth="64.0" text="Action" />
+         </columns></TableView>
+      <AnchorPane fx:id="createQuestionWd" layoutY="-3.0" prefHeight="809.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" visible="false">
+         <children>
+            <Label layoutX="14.0" layoutY="109.0" prefHeight="34.0" prefWidth="87.0" text="Question Name" />
+            <TextField fx:id="questionName" layoutX="128.0" layoutY="76.0" prefHeight="101.0" prefWidth="451.0" />
+            <ScrollPane layoutX="128.0" layoutY="208.0" prefHeight="200.0" prefWidth="451.0">
+               <content>
+                  <VBox fx:id="frameAnswers" prefHeight="0.0" prefWidth="439.0" />
+               </content>
+            </ScrollPane>
+            <Button layoutX="128.0" layoutY="499.0" mnemonicParsing="false" onAction="#blankMoreChoice" prefHeight="44.0" prefWidth="401.0" text="BLANK FOR MORE CHOICE" />
+            <Button layoutX="128.0" layoutY="633.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="44.0" prefWidth="112.0" text="SAVE CHANGES" />
+            <Button layoutX="313.0" layoutY="633.0" mnemonicParsing="false" onAction="#cancelEdit" prefHeight="44.0" prefWidth="122.0" text="CANCEL" />
+            <Label fx:id="modeLabel" layoutX="14.0" layoutY="6.0" prefHeight="53.0" prefWidth="401.0" />
+            <Button fx:id="btnSaveAndEdit" layoutX="128.0" layoutY="563.0" mnemonicParsing="false" onAction="#saveAndEdit" prefHeight="44.0" prefWidth="401.0" text="SAVE CHANGES AND CONTINUE EDITING" visible="false" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="importFileWd" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" visible="false">
+         <children>
+            <Button layoutX="44.0" layoutY="197.0" mnemonicParsing="false" onAction="#chooseFileTxt" prefHeight="44.0" prefWidth="155.0" text="CHOOSE A FILE..." />
+            <Button layoutX="206.0" layoutY="605.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="188.0" text="IMPORT" />
+            <VBox fx:id="dragAndDropFile" alignment="BOTTOM_CENTER" layoutX="44.0" layoutY="281.0" prefHeight="200.0" prefWidth="512.0" style="-fx-border-color: #000000;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="34.0" prefWidth="310.0" text="You can drag and drop files here to add them.">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <Button layoutX="544.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeImportFileWd" text="X" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="categoryAddWd" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" visible="false">
+         <children>
+            <Button layoutX="562.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeCategoryAddWd" text="X" />
+            <Label layoutX="59.0" layoutY="66.0" prefHeight="44.0" prefWidth="155.0" text="Parent category" />
+            <Label layoutX="66.0" layoutY="278.0" prefHeight="44.0" prefWidth="181.0" text="Name" />
+            <VBox fx:id="frameCbbCategory" layoutX="268.0" layoutY="66.0" prefHeight="44.0" prefWidth="251.0" />
+            <TextField fx:id="categoryNameText" layoutX="268.0" layoutY="281.0" prefHeight="44.0" prefWidth="251.0" />
+            <Button layoutX="175.0" layoutY="548.0" mnemonicParsing="false" onAction="#addCategoryToCbb" prefHeight="53.0" prefWidth="251.0" text="ADD CATEGORY" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
