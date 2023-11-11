@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="content_doi-khi-la-yeu-to-tam-linh-tac-dong-den-tam-ly-xa-hoi.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="content_doi-khi-la-yeu-to-tam-linh-tac-dong-den-tam-ly-xa-hoi.jpg" />
+  </ItemGroup>
+
+</Project>
